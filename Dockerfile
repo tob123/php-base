@@ -19,10 +19,10 @@ RUN apk --no-cache add \
     mkdir /run/apache2; \
     chown apache:apache /run/apache2; \
     chmod 700 /run/apache2; \
-#    mkdir ${MY_DOC_ROOT}; \
-#    apk add --virtual build-dependencies gawk; \
-#    awk -i inplace '{ gsub(/MY_DOC_ROOT/,"'"${MY_DOC_ROOT}"'") }; { print }' /etc/apache2/conf.d/httpd-custom.conf; \
-#    apk del --purge build-dependencies ;\
+    mkdir ${MY_DOC_ROOT}; \
+    apk add --virtual build-dependencies gawk; \
+    awk -i inplace '{ gsub(/MY_DOC_ROOT/,"'"${MY_DOC_ROOT}"'") }; { print }' /etc/apache2/conf.d/httpd-custom.conf; \
+    apk del --purge build-dependencies ;\
     #CIS stuff for apache
 #apply some cis baseline items for apache. 
 #2.1auth related modules. authz_core and authz_host are needed for configuring grants on directories
