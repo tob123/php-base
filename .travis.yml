@@ -1,7 +1,7 @@
 services:
   - docker
 script:
-  - docker build .
-  - docker run myimage
+  - docker build -t tob123/php-apache:1.0 .
+  - docker run -d tob123/php-apache:1.0
 after_script:
   - docker images
