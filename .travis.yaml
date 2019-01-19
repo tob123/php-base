@@ -1,0 +1,7 @@
+services:
+  - docker
+script:
+  - docker build .
+  - docker run myimage
+after_script:
+  - docker images
